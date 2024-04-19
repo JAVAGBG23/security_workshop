@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client-Side Data Storage</title>
+  </head>
+  <body>
+    <!-- Lagring av känslig data i localStorage
+    Risken: Lagring av känslig information i klientens webbläsare på 
+    ett osäkert sätt kan leda till att informationen stjäls via XSS-attacker. -->
+    <script>
+      localStorage.setItem(
+        "userData",
+        JSON.stringify({ username: "user", password: "password123" })
+      );
+    </script>
+  </body>
+</html>

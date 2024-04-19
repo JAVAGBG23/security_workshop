@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insecure External Link</title>
+  </head>
+  <body>
+    <!-- En osäker extern länk kan utnyttjas för att stjäla cookies 
+        eller utföra andra skadliga handlingar 
+    
+    Risken: När användaren klickar på en länk som öppnas i en ny flik 
+    (target="_blank"), kan den nya sidan potentiellt få tillgång till 
+    din ursprungliga sida via window.opener. Detta kan leda till potentiella 
+    säkerhetsrisker såsom phishing eller kapning av användarsessioner.
+-->
+    <a href="http://external.example.com" target="_blank"
+      >Visit External Site</a
+    >
+  </body>
+</html>

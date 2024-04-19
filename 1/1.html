@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cross-Site Scripting (XSS)</title>
+  </head>
+  <body>
+    <!-- i exemplet skickar ett form användarinput direkt till en annan del av sidan -->
+    <!--Risken: Genom att direkt infoga användarinput i DOM kan en angripare injicera 
+      skadlig JavaScript-kod, t.ex. genom att skriva <script>alert('Hacked')</script> i 
+      inputfältet, vilket skulle köra skriptet när inputen visas på sidan.-->
+    <input id="userInput" type="text" placeholder="Enter your name" />
+    <button onclick="greetUser()">Greet</button>
+    <script>
+      function greetUser() {
+        let user = document.getElementById("userInput").value;
+        document.getElementById("greeting").innerHTML = "Hello, " + user;
+      }
+    </script>
+    <div id="greeting"></div>
+  </body>
+</html>

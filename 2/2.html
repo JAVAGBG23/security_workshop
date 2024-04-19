@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Injection</title>
+  </head>
+  <body>
+    <!-- användare kan skicka HTML som kan manipulera sidans struktur -->
+    <!--Risken: Genom att tillåta HTML-kod i användarinput kan en angripare ändra sidinnehållet 
+      eller infoga skadliga element.-->
+    <input id="commentInput" type="text" placeholder="Write a comment" />
+    <button onclick="postComment()">Post Comment</button>
+    <script>
+      function postComment() {
+        let comment = document.getElementById("commentInput").value;
+        document.getElementById("comments").innerHTML +=
+          "<div>" + comment + "</div>";
+      }
+    </script>
+    <div id="comments"></div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Event Handlers</title>
+  </head>
+  <body>
+    <!-- En event handler som tar emot input från användaren kan manipuleras 
+        för att exekvera skadlig kod
+    
+        Risken: Även om exemplet ovan är ofarligt, kan en mer komplex JavaScript-kod 
+        som använder onclick med användardefinierade strängar lätt manipuleras för 
+        att exekvera skadlig kod om input inte hanteras korrekt.
+    -->
+    <button onclick="alert('Item added to your cart!')">Add to Cart</button>
+  </body>
+</html>

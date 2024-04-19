@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Redirection Vulnerability</title>
+  </head>
+  <body>
+    <!-- En länk som omdirigerar baserat på query-parametrar
+    
+    Risken: Om en angripare skickar en länk med en skadlig URL som en parameter, 
+    kan detta leda till en oönskad omdirigering som kan användas för phishing 
+    eller andra skadliga syften.-->
+    <a id="redirectLink" href="#">Click Here</a>
+    <script>
+      document.getElementById("redirectLink").href =
+        "http://" + new URLSearchParams(window.location.search).get("url");
+    </script>
+  </body>
+</html>

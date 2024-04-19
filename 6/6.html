@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cross-Site Scripting (XSS) via Document.write</title>
+  </head>
+  <body>
+    <!-- Användning av document.write med användarinput kan leda till XSS-attacker
+    Risken: Om användarinputen från URL-parametern user inte saneras, kan en angripare 
+    inkludera skadlig JavaScript-kod som körs när sidan laddas. -->
+    <script>
+      let urlParams = new URLSearchParams(window.location.search);
+      document.write("Welcome, " + urlParams.get("user"));
+    </script>
+  </body>
+</html>
